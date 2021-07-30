@@ -1,73 +1,13 @@
-$lightdark:#252B42;
-$dark:#18171D;
-$white: #fff;
-$primary: #2091F9;
+@import "vendor/normalize";
+@import "mixin";
 
-@mixin font-nav-footer {
-    color: $white;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 27px;
-    text-decoration: none;
-    letter-spacing: 0.2px;
-}
-
-@mixin h2 {
-    font-weight: 900;
-    font-size: 55px;
-    line-height: 65px;
-    letter-spacing: 0.2px;
-}
-
-@mixin p1 {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.2px;
-    color: $white;
-}
-
-@mixin button-subsride {
-    display: inline-block;
-    text-decoration: none;
-    padding: 19px 38px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    color: $primary;
-    background-color: $white;
-    border-radius: 35px;
-    letter-spacing: 0.2px;
-}
-
-@mixin button-free {
-    display: inline-block;
-    text-decoration: none;
-    padding: 16px 58px;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 33px;
-    color: $primary;
-    background-color: $white;
-    border-radius: 35px;
-    letter-spacing: 0.1px;
-}
-
-@mixin input-email {
-    padding: 19px 38px;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.1px;
-    color: $dark;
-    background-color: $white;
-    border-radius: 39px;
-    text-decoration: none;
-    border: none;
-}
+@import "color";
 
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -157,4 +97,61 @@ img {
         flex-direction: column;
         align-items: center;
     }    
+}
+
+.feature {
+    padding: 96px 0 154px 0;
+    margin: 0 auto;
+    text-align: center;
+        & p {
+            @include p;
+        }
+            & h3 {
+                @include h3;
+                margin: 16px 0 28px 0;
+            }
+                & span {
+                    @include span;
+                }
+        &__block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 138px;
+        }
+            &__text {
+                display:flex;
+                flex-direction: column;
+                margin-left: 94px;
+            }
+                &__text div {
+                    display: flex;
+                    align-items: center;
+                }
+                    &__text p {
+                        @include p1;
+                        max-width: 255px;
+                        margin-top: 15px;
+                        text-align: left
+                    }   
+                        &__text div p {
+                            @include p;
+                            margin-left: 10px;
+                        }
+}
+
+.lightning {
+    padding:100px 0 ;
+    margin: 0 auto;
+    text-align: center;
+        & p {
+            @include p;
+        }
+            & h3 {
+                @include h3;
+                margin: 16px 0 28px 0;
+            }
+                & span {
+                    @include span;
+                }
 }

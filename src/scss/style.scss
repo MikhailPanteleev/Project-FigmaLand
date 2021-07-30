@@ -1,0 +1,160 @@
+$lightdark:#252B42;
+$dark:#18171D;
+$white: #fff;
+$primary: #2091F9;
+
+@mixin font-nav-footer {
+    color: $white;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 27px;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+}
+
+@mixin h2 {
+    font-weight: 900;
+    font-size: 55px;
+    line-height: 65px;
+    letter-spacing: 0.2px;
+}
+
+@mixin p1 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: $white;
+}
+
+@mixin button-subsride {
+    display: inline-block;
+    text-decoration: none;
+    padding: 19px 38px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: $primary;
+    background-color: $white;
+    border-radius: 35px;
+    letter-spacing: 0.2px;
+}
+
+@mixin button-free {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 58px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 33px;
+    color: $primary;
+    background-color: $white;
+    border-radius: 35px;
+    letter-spacing: 0.1px;
+}
+
+@mixin input-email {
+    padding: 19px 38px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.1px;
+    color: $dark;
+    background-color: $white;
+    border-radius: 39px;
+    text-decoration: none;
+    border: none;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: $lightdark;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1120px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.bg {
+    background-image: url(../img/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+} 
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+            &__list {
+                display: flex;
+                list-style-type: none;
+            }
+                &__list a {
+                    @include font-nav-footer;
+                }
+                    &__list li+li {
+                        padding-left: 40px;
+                    }
+    
+}
+
+.header-form {
+    & input {
+        @include input-email
+    }
+        & a {
+            @include button-subsride;
+        }
+}
+
+.notebook {
+    max-width: 1054px;
+    margin:0 auto;
+    padding: 150px 0 134px 0;
+    text-align: center;
+    color: $white;
+        & h1 {
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 33px;
+            letter-spacing: 0.1px;
+            margin: 0
+        }
+            & h2 {
+                @include h2;
+                padding: 16px 0 28px 0;
+                margin: 0;
+            }
+                & p {
+                    @include p1;
+                    margin: 0 auto;
+                    max-width: 430px;
+                    text-align: center;
+                }
+                    & a {
+                        @include button-free;
+                        margin: 90px 0 114px 0;
+                    }
+}
+
+@media (max-width:1200px) {
+    .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }    
+}

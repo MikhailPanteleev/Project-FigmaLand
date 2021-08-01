@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +10,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
     <title>Figma Land</title>
 </head>
-
 <body>
     <div class="bg">
         <header class="main-header">
-            <nav class="main-nav container">
+            <nav class="main-nav">
                 <div>
                     <img src="/img/icon-logo.svg" alt="">
                 </div>
@@ -54,7 +52,7 @@
                     <p>At your fingertips</p>
                 </div>
                 <p>Slate helps you see how many more days you need to work to reach your financial goal.</p>
-                <div>
+                <div class="feature__text-block">
                     <img src="img/feature-icon.svg" alt="Иконка ресторана">
                     <p>At your fingertips</p>
                 </div>
@@ -66,6 +64,229 @@
         <p>At your fingertips</p>
         <h3>Lightning fast prototyping</h3>
         <span>Most calendars are designed for teams. <br> Slate is designed for freelancers</span>
+        <div class="lightning-button">
+            <a href="#">Buy now</a>
+            <a href="#">Try for free</a>
+        </div>
     </section>
+    <section class="newsletter">
+        <div class="newsletter__img"><img src="img/newsletter.svg" alt="Фото новостей"></div>
+        <div class="newsletter__text">
+        <p>At your fingertips</p>
+        <h3>Newsletter</h3>
+        <p>Subscribe to our Newsletter</p>
+        <p>Available exclusivery on Figmaland</p>
+        <form class="newsletter-form" action="">
+            <input type="text" placeholder="Your e-mail">
+            <a href="">Subsribe</a>
+        </form>
+        </div>
+    </section>
+    <section class="partners">
+        <h3>Partners</h3>
+        <span>Most calendars are designed for teams. <br> Slate is designed for freelancers</span>
+        <ul class="partners__link">
+            <li>
+                <a href="">
+                    <img src="img/logo-frame.svg" alt="Логотип frame">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/logo-apiary.svg" alt="Логотип apiary">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/logo-android.svg" alt="Логотип android">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/logo-basecamp.svg" alt="Логотип basecamp">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/logo-airbnb.svg" alt="Логотип airbnb">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/logo-frame.svg" alt="Логотип frame">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/logo-ibm.svg" alt="Логотип ibm">
+                </a>
+            </li>
+        </ul>
+        <a class="partners__button" href="#">Try for free</a>
+    </section>
+    <section class="testimonials container">
+        <h3>Testimonials</h3>
+        <ul class="testimonials__block">
+            <div class="testimonials__block-text">
+                <li>
+                    <img src="img/photo-one.png" alt="">
+                    <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
+                    <img src="img/stars.png" alt="Фото рейтинга">
+                    <p>Regina Miles</p>
+                    <p>Designer</p> 
+                </li>
+                <li>
+                    <img src="img/photo-two.png" alt="">
+                    <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
+                    <img src="img/stars.png" alt="Фото рейтинга">
+                    <p>Regina Miles</p>
+                    <p>Designer</p>
+                </li>
+                <li>
+                    <img src="img/photo-three.png" alt="">
+                    <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
+                    <img src="img/stars.png" alt="Фото рейтинга">
+                    <p>Regina Miles</p>
+                    <p>Designer</p>
+                </li>
+            </div>
+            <div class="testimonials__block-text">
+                <li>
+                    <img src="img/photo-four.png" alt="">
+                    <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
+                    <img src="img/stars.png" alt="Фото рейтинга">
+                    <p>Regina Miles</p>
+                    <p>Designer</p>
+                </li>
+                <li>
+                    <img src="img/photo-five.png" alt="">
+                    <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
+                    <img src="img/stars.png" alt="Фото рейтинга">
+                    <p>Regina Miles</p>
+                    <p>Designer</p>
+                </li>
+                <li>
+                    <img src="img/photo-six.png" alt="">
+                    <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
+                    <img src="img/stars.png" alt="Фото рейтинга">
+                    <p>Regina Miles</p>
+                    <p>Designer</p>
+                </li>
+            </div>
+        </ul>
+        <a class="testimonials__button" href="">More Testimonials</a>
+    </section>
+    <section class="pricing">
+        <div class="pricing__block-one">
+            <h3>Pricing</h3>
+            <p>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</p>
+        </div>
+        <div class="pricing__block-two">
+            <span>30 - day free trial.</span>
+            <div>
+                <p>$10</p>
+                <span>/ Month per User</span>
+            </div>
+            <span>Most calendars are designed for teams.</span>
+            <p>
+                <a href="">Get started</a>
+            </p>
+        </div>
+    </section>
+    <section class="contacts">
+        <h3>Contact Us</h3>
+        <span>Most calendars are designed for teams. <br> Slate is designed for freelancers</span>
+        <ul class="contacts__social">
+            <li>
+                <a href="">
+                    <img src="img/icon-twitter.svg" alt="Иконка twitter">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/icon-facebook.svg" alt="Иконка facebook">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/icon-linkedin.svg" alt="Иконка linkedin">
+                </a>
+            </li>
+        </ul>
+        <img src="img/map.png" alt="">
+        <ul class="contacts__connection">
+            <li>
+                <a href="">
+                    <img src="img/icon-map.svg" alt="Иконка карты">
+                </a>
+                <p>6386 Spring St undefined Anchorage, Georgia 12473 United States</p>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/icon-telephone.svg" alt="Иконка телефона">
+                </a>
+                <p>(843) 555-0130</p>
+            </li>
+            <li>
+                <a href="">
+                    <img src="img/icon-e-mail.svg" alt="Иконка почты">
+                </a>
+                <p>willie.jennings@example.com</p>
+            </li>
+        </ul>
+    </section> 
     </main>
+    <footer class="main-footer container">
+        <div class="main-footer__block">
+            <p>Pages</p>
+            <ul class="main-footer__block-link">
+                <li><a href="">Home</a></li>
+                <li><a href="">Product</a></li>
+                <li><a href="">Pricing</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main-footer__block">
+            <p>Tomothy</p>
+            <ul class="main-footer__block-link">
+                <li><a href="">Eleanor Edwards</a></li>
+                <li><a href="">Ted Robertson</a></li>
+                <li><a href="">Annette Russell</a></li>
+                <li><a href="">Jennie Mckinney</a></li>
+                <li><a href="">Gloria Richards</a></li>
+            </ul>
+        </div>
+        <div class="main-footer__block">
+            <p>Jane Black</p>
+            <ul class="main-footer__block-link">
+                <li><a href="">Philip Jones</a></li>
+                <li><a href="">Product</a></li>
+                <li><a href="">Colleen Russell</a></li>
+                <li><a href="">Marvin Hawkins</a></li>
+                <li><a href="">Bruce Simmmons</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="main-footer__social">
+                <li class="main-footer__social-link">
+                    <a href="">
+                        <img src="img/icon-twitter.svg" alt="Иконка twitter">
+                    </a>
+                    <a href="">
+                        <img src="img/icon-telephone.svg" alt="Иконка телефона">
+                    </a>
+                    <a href="">
+                        <img src="img/icon-e-mail.svg" alt="Иконка почты">
+                    </a>
+                </li>
+                <p>Subscribe to our Newsletter</p>
+                <span>Available exclusivery on Figmaland</span>
+                    <form class="main-footer__form" action="">
+                        <input type="text" placeholder="Your e-mail">
+                        <a href="">Subsribe</a>
+                    </form>
+            </ul>
+        </div>
+    </footer>
 </body>

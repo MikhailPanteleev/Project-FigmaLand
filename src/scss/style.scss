@@ -1,29 +1,27 @@
 @import "vendor/normalize";
 @import "mixin";
+@import "variables";
 
-@import "color";
+
+
 
 * {
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
-
+.container {
+    max-width: 1128px;
+    margin: 0 auto;
+    padding: 0;
+}
 body {
     background-color: $lightdark;
-    padding: 0;
-    margin: 0;
+    color: $white;
+    font-family: 'Roboto', sans-serif;
 }
-
 img {
     max-width: 100%;
-}
-
-.container {
-    max-width: 1120px;
-    padding: 0;
-    margin: 0 auto;
 }
 
 .bg {
@@ -31,64 +29,67 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 0;
-    margin: 0;
 } 
-
 .main-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     padding-top: 50px;
-            &__list {
-                display: flex;
-                list-style-type: none;
+        &__list {
+            display: flex;
+            margin: 0 52px;
+            list-style-type: none;
+        }
+            &__list a {
+                @include font (normal, 15px, 27px, 0.2px);
+                text-decoration: none;
+                color: $white;
             }
-                &__list a {
-                    @include font-nav-footer;
-                }
-                    &__list li+li {
-                        padding-left: 40px;
-                    }
+            &__list li+li {
+                padding-left: 40px;
+            }
     
 }
-
 .header-form {
     & input {
-        @include input-email
+        margin-right: 12px;
+        @include input (19px 38px, $dark, $white, 39px);
+        @include font (normal, 14px, 16px, 00.1px);
     }
         & a {
-            @include button-subsride;
+            @include button (19px 38px, $primary, $white, 35px);
+            @include font (500, 16px, 16px, 0.2px);
+            &:hover {
+                @include button-hover ($white, $primary);
+            }
         }
 }
-
 .notebook {
     max-width: 1054px;
     margin:0 auto;
     padding: 150px 0 134px 0;
     text-align: center;
-    color: $white;
         & h1 {
-            font-weight: bold;
-            font-size: 22px;
-            line-height: 33px;
-            letter-spacing: 0.1px;
-            margin: 0
+            @include font (bold, 22px, 33px, 0.1px);
         }
-            & h2 {
-                @include h2;
-                padding: 16px 0 28px 0;
-                margin: 0;
-            }
-                & p {
-                    @include p1;
-                    margin: 0 auto;
-                    max-width: 430px;
-                    text-align: center;
+        & h2 {
+            @include font (900, 55px, 65px, 0.2px);
+            padding: 16px 0 28px 0;
+        }
+        & p {
+            @include font (normal, 18px, 27px, 0.2px);
+            margin: 0 auto;
+            max-width: 430px;
+            text-align: center;
+        }
+        & a {
+            @include button (16px 58px, $primary, $white, 35px);
+            @include font (500, 22px, 33px, 0.2px);
+            margin: 90px 0 114px 0;
+                &:hover {
+                @include button-hover ($white, $primary)
                 }
-                    & a {
-                        @include button-free;
-                        margin: 90px 0 114px 0;
-                    }
+        }
 }
 
 @media (max-width:1200px) {
@@ -96,6 +97,13 @@ img {
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 20px;
+            &__list {
+                padding: 20px 0;
+        }
+    }
+    .notebook img {
+        padding: 0 20px;
     }    
 }
 
@@ -104,40 +112,43 @@ img {
     margin: 0 auto;
     text-align: center;
         & p {
-            @include p;
+            @include font (bold, 22px, 33px, 0.1px);
         }
-            & h3 {
-                @include h3;
-                margin: 16px 0 28px 0;
+        & h3 {
+            @include font (normal, 46px, 57px, 0.2px);
+            margin: 16px 0 28px 0;
+        }
+        & span {
+            @include font (bold, 16px, 20px, 0.2px);
+        }
+            &__block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 138px;
             }
-                & span {
-                    @include span;
+                &__text {
+                    display:flex;
+                    flex-direction: column;
+                    margin-left: 94px;
                 }
-        &__block {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 138px;
-        }
-            &__text {
-                display:flex;
-                flex-direction: column;
-                margin-left: 94px;
-            }
                 &__text div {
                     display: flex;
                     align-items: center;
                 }
-                    &__text p {
-                        @include p1;
-                        max-width: 255px;
-                        margin-top: 15px;
-                        text-align: left
-                    }   
-                        &__text div p {
-                            @include p;
-                            margin-left: 10px;
-                        }
+                &__text p {
+                    @include font (normal, 18px, 27px, 0.2px);
+                    max-width: 255px;
+                    margin-top: 15px;
+                    text-align: left;
+                }   
+                &__text div p {
+                    @include font (bold, 22px, 33px, 0.1px);
+                    margin-left: 10px;
+                }
+                    &__text-block {
+                        padding-top: 95px;
+                    }
 }
 
 .lightning {
@@ -145,13 +156,294 @@ img {
     margin: 0 auto;
     text-align: center;
         & p {
-            @include p;
+            @include font (bold, 22px, 33px, 0.1px);
         }
-            & h3 {
-                @include h3;
-                margin: 16px 0 28px 0;
+        & h3 {
+            @include font (normal, 46px, 57px, 0.2px);
+            margin: 16px 0 28px 0;
+        }
+        & span {
+            @include font (bold, 16px, 20px, 0.2px);
+            color: $white;
+        }
+}
+.lightning-button {  
+    margin-top: 90px;
+    & a+a {
+        margin-left: 16px; 
+    }
+    & a {
+        @include button (18px 31px, $white, $dark, 35px);
+        @include font (500, 16px, 16px, 0.2px);
+        border: 1px solid $white;
+            &:hover {
+                @include button-hover ($primary, $white)
+        }
+}
+}
+
+.newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 216px 0 108px 0;
+    &__img {
+        display: flex;
+    }
+    &__text h3{
+        @include font (normal, 46px, 57px, 0.2px);
+        padding: 20px 0 40px 0;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        padding-left: 114px
+    }
+    &__text p {
+       @include font (bold, 22px, 33px, 0.1px);
+    }
+    &__text p:last-child {
+        @include font (normal, 18px, 27px, 0.2px);
+    }
+}
+
+.newsletter-form {
+    margin-top: 40px;
+         & input {
+        margin-right: 12px;
+        @include input (19px 38px, $dark, $white, 39px);
+        @include font (normal, 14px, 16px, 00.1px);
+    }
+        & a {
+            @include button (19px 38px, $primary, $white, 35px);
+            @include font (500, 16px, 16px, 0.2px);
+            &:hover {
+                @include button-hover ($white, $primary);
             }
-                & span {
-                    @include span;
+        }
+}
+
+.partners {
+    text-align: center;
+    padding: 90px 0 80px 0;
+        & h3 {
+             @include font (normal, 46px, 57px, 0.2px);
+             padding-bottom: 28px;
+        }
+        & span {
+            @include font (bold, 16px, 20px, 0.2px);
+            color: $white;
+        }
+        &__button {
+            @include button (16px 58px, $primary, $white, 35px);
+            @include font (500, 22px, 33px, 0.2px);
+        }
+        &__button:hover {
+             @include button-hover ($white, $primary);
+        }
+        &__link {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin:104px 0 96px 0;
+        }
+        &__link li+li {
+            margin-left: 66px;
+        }
+}
+
+.testimonials {
+    padding: 110px 0 100px 0;
+    text-align: center;
+        & h3 {
+            @include font (normal, 46px, 57px, 0.2px);
+        }
+        & ul {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            color: $text;
+            margin: 90px 0 80px 0;
+        } 
+        &__block div {
+            display: flex;
+        }
+        &__block div+div {
+            margin-top: 104px;
+        }
+        &__block-text li+li {
+            margin-left: 60px;
+        }
+        & li {
+            list-style-type: none;
+            text-align: center;
+            background-color: $white;
+            box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+            border-radius: 10px;
+            width: 334px;
+        }
+        & li img {
+            margin-top: 40px;
+        }
+        & li span {
+            display:inline-block;
+            @include font (normal, 18px, 27px, 0.2px);
+            width: 250px;
+            margin: 40px 0;
+        }
+        & li p {
+            @include font (normal, 15px, 27px, 0.2px);
+            margin-top: 32px;
+        }
+        & li p:last-child {
+            @include font (bold, 12px, 18px, 0.1px);
+            margin: 10px 0 50px 0;
+        }
+        &__button {
+            @include button (16px 48px, $primary, $white, 35px);
+            @include font (bold, 22px, 33px, 0.1px);
+                &:hover {
+                    @include button-hover ($white, $primary);
                 }
+        }
+}
+
+.pricing {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 110px 0 100px 0;
+       &__block-one {
+            max-width: 340px;
+            margin-right: 284px;
+       }
+       &__block-one h3 {
+            @include font (normal, 46px, 57px, 0.2px);
+            padding-bottom: 26px;
+       }
+       &__block-one p {
+           @include font (normal, 18px, 27px, 0.2px);
+           color: $white;
+       }
+       &__block-two {
+            max-width: 234px;
+       }
+       &__block-two div {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 16px 0;
+       }
+       &__block-two div p {
+           @include font (900, 55px, 65px, 0.2px);
+           color: $white;
+           text-transform: uppercase;
+       }
+       &__block-two span {
+           @include font (bold, 16px, 20px, 0.2px);
+           color: $white;
+       }
+       &__block-two a {
+           @include button (19px 38px, $primary, $white, 35px);
+           @include font (500, 16px, 16px, 0.2px);
+           margin-top: 18px;
+            &:hover {
+                @include button-hover ($white, $primary);
+            }
+       }
+}
+
+.contacts {
+    text-align: center;
+    padding: 210px 0 100px 0;
+        & h3 {
+            @include font (normal, 46px, 57px, 0.2px);
+            padding-bottom: 26px;
+        }
+        & span {
+            @include font (bold, 16px, 20px, 0.2px);
+            color: $white;
+        }
+        &__social {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            padding: 74px 0;
+        }
+        &__social li+li {
+            padding-left: 32px;
+        }
+        &__connection {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 18px;        
+            letter-spacing: 0.1px;
+            color: $white;
+            padding: 60px 0;
+        }
+        &__connection li+li {
+            padding-left: 34px;
+        }
+        &__connection li {
+            max-width: 210px;
+        }
+}
+
+.main-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 112px 0 130px 0;
+    & p {
+        @include font (bold, 22px, 33px, 0.1px);
+        padding-bottom: 24px;
+    }
+    & li {
+        display: flex;
+        list-style-type: none;
+    }
+    &__block-link a{
+        text-decoration: none;
+        @include font (normal, 15px, 27px, 0.2px);
+        color: $white;
+    }
+            &__block-link li+li {
+            padding-top: 16px;
+        }
+    &__social {
+        display: flex;
+        flex-direction: column;
+    }
+    &__social-link a+a {
+        margin-left: 32px;
+    }
+    &__social p {
+        @include font (bold, 22px, 33px, 0.1px);
+        padding-top: 30px;
+    }
+    &_social span {
+        @include font (normal, 18px, 27px, 0.2px);
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+            & input {
+                margin-top: 28px;
+                @include input (19px 35px, $dark, $white, 39px)
+            }
+    }
+    &__form a {
+        margin-top: 12px;
+        text-decoration: none;
+        @include button (16px 144px, $primary, $white, 35px);
+        @include font (500, 16px, 16px, 0.2px);
+    &:hover {
+        @include button-hover ($white, $primary)
+    }
+    }
 }

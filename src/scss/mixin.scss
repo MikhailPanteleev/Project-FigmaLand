@@ -1,85 +1,31 @@
-@mixin font-nav-footer {
-    color: $white;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 27px;
-    text-decoration: none;
-    letter-spacing: 0.2px;
+@mixin font ($fontW, $fontS, $lineH, $letterS){
+    font-weight: $fontW;
+    font-size: $fontS;
+    line-height: $lineH;
+    letter-spacing: $letterS;
 }
 
-@mixin h2 {
-    font-weight: 900;
-    font-size: 55px;
-    line-height: 65px;
-    letter-spacing: 0.2px;
-}
-
-@mixin h3 {
-    font-weight: normal;
-    font-size: 46px;
-    line-height: 57px;
-    letter-spacing: 0.2px;
-    color: $white;
-}
-
-@mixin p {
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 33px;
-    letter-spacing: 0.1px;
-    color: $white;
-}
-
-@mixin span {
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.2px;
-    color: $white;
-    max-width: 298px;
-}
-
-@mixin p1 {
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 27px;
-    letter-spacing: 0.2px;
-}
-
-@mixin button-subsride {
+@mixin button ($pad, $color, $bgcolor, $borderR) {
     display: inline-block;
     text-decoration: none;
-    padding: 19px 38px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
-    color: $primary;
-    background-color: $white;
-    border-radius: 35px;
-    letter-spacing: 0.2px;
+    padding: $pad;
+    color: $color;
+    background-color: $bgcolor;
+    border-radius: $borderR;
 }
 
-@mixin button-free {
-    display: inline-block;
-    text-decoration: none;
-    padding: 16px 58px;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 33px;
-    color: $primary;
-    background-color: $white;
-    border-radius: 35px;
-    letter-spacing: 0.1px;
+@mixin button-hover ($color, $bgcolor) {
+    content: '';
+    color: $color;
+    background-color: $bgcolor;
 }
 
-@mixin input-email {
-    padding: 19px 38px;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.1px;
-    color: $dark;
-    background-color: $white;
-    border-radius: 39px;
+
+@mixin input ($pad, $color, $bgcolor, $borderR) {
     text-decoration: none;
     border: none;
+    padding: $pad;
+    color: $color;
+    background-color: $bgcolor;
+    border-radius: $borderR;
 }

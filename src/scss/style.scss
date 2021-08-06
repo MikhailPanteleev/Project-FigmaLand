@@ -2,24 +2,24 @@
 @import "mixin";
 @import "variables";
 
-
-
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 .container {
-    max-width: 1128px;
+    max-width: 1188px;
     margin: 0 auto;
     padding: 0;
 }
+
 body {
     background-color: $lightdark;
     color: $white;
     font-family: 'Roboto', sans-serif;
 }
+
 img {
     max-width: 100%;
 }
@@ -30,142 +30,211 @@ img {
     background-size: cover;
     background-position: center;
 } 
+
+// navigation
+
 .main-nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 50px;
-        &__list {
-            display: flex;
-            margin: 0 52px;
-            list-style-type: none;
-        }
-            &__list a {
-                @include font (normal, 15px, 27px, 0.2px);
+    padding: 30px 30px 0 30px ;
+    &__list {
+        margin: 0 50px;
+        display: none;
+        list-style-type: none;
+        & a {
+            @include font (normal, 15px, 27px, 0.2px);
                 text-decoration: none;
                 color: $white;
-            }
-            &__list li+li {
-                padding-left: 40px;
-            }
-    
+        }
+    }  
 }
 .header-form {
+    display: none;
     & input {
         margin-right: 12px;
         @include input (19px 38px, $dark, $white, 39px);
         @include font (normal, 14px, 16px, 00.1px);
     }
-        & a {
-            @include button (19px 38px, $primary, $white, 35px);
-            @include font (500, 16px, 16px, 0.2px);
-            &:hover {
-                @include button-hover ($white, $primary);
-            }
+    & a {
+        @include button (19px 38px, $blue, $white, 35px);
+        @include font (500, 16px, 16px, 0.2px);
+        &:hover {
+            @include button-hover ($white, $blue);
         }
-}
-.notebook {
-    max-width: 1054px;
-    margin:0 auto;
-    padding: 150px 0 134px 0;
-    text-align: center;
-        & h1 {
-            @include font (bold, 22px, 33px, 0.1px);
-        }
-        & h2 {
-            @include font (900, 55px, 65px, 0.2px);
-            padding: 16px 0 28px 0;
-        }
-        & p {
-            @include font (normal, 18px, 27px, 0.2px);
-            margin: 0 auto;
-            max-width: 430px;
-            text-align: center;
-        }
-        & a {
-            @include button (16px 58px, $primary, $white, 35px);
-            @include font (500, 22px, 33px, 0.2px);
-            margin: 90px 0 114px 0;
-                &:hover {
-                @include button-hover ($white, $primary)
-                }
-        }
+    }
 }
 
-@media (max-width:1200px) {
+.header-mobil {
+    &__login {
+        @include button (18px 38px, $blue, $white, 35px);
+        @include font (500, 16px, 16px, 0.2px);
+        margin: 0 26px 0 0;
+        &:hover {
+            @include button-hover ($white, $blue);
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .main-nav__list {
+        display: flex;
+        & li+li {
+            padding-left: 12px;
+        }
+    }
+    .header-mobil__dropdown {
+        display: none;
+    }   
+}
+
+@media (min-width: 992px) {
     .main-nav {
+        padding-top: 50px;
+        &__list {
+            margin: 0;
+        }
+    }
+    .header-form {
+        display: block;
+    }
+    .header-mobil__login {
+        display: none;
+    }
+}
+
+@media (min-width:1200px) {
+    .main-nav {
+        padding:50px 10px 0 10px;
+        &__list {
+            & li+li {
+                padding-left: 40px;
+            }
+        }
+    }     
+}
+
+// !navigation
+
+// notebook
+
+.notebook {
+    margin:0 auto;
+    padding: 110px 30px 64px 30px;
+    text-align: center;
+    & h1 {
+        @include font (bold, 22px, 33px, 0.1px);
+    }
+    & h2 {
+        @include font (normal, 46px, 57px, 0.2px);   
+        padding: 16px 0 28px 0;
+    }
+    & p {
+        @include font (normal, 18px, 27px, 0.2px);
+        margin: 0 auto;
+        max-width: 490px;
+        text-align: center;
+    }
+    & a {
+        @include button (16px 58px, $blue, $white, 35px);
+        @include font (500, 22px, 33px, 0.2px);
+        margin: 68px 0 64px 0;
+            &:hover {
+            @include button-hover ($white, $blue)
+            }
+    }
+}
+
+@media (min-width: 1200px) {
+    .notebook {
+        padding: 150px 0 134px 0;
+        & h2 {
+            @include font (900, 55px, 65px, 0.2px);
+        }
+        & a {
+            margin: 90px 0 114px 0;
+        }
+    }
+}
+
+// !notebook
+
+// feature
+
+.feature {
+    padding: 80px 30px 108px 30px;
+    margin: 0 auto;
+    text-align: center;
+    & p {
+        @include font (bold, 22px, 33px, 0.1px);
+    }
+    & h3 {
+        @include font (normal, 46px, 57px, 0.2px);
+        margin: 16px 0 28px 0;
+    }
+    & span {
+        @include font (bold, 16px, 20px, 0.2px);
+    }
+    &__screen {
+        padding: 66px 0 78px 0;
+    }
+    &__text {
+        padding-left: 60px;
+    }
+    &__block {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 20px;
-            &__list {
-                padding: 20px 0;
+        justify-content: center;    
+    }
+    &__text div {
+        display: flex;
+    }
+    &__text p {
+        @include font (normal, 18px, 27px, 0.2px);
+        max-width: 255px;
+        text-align: left;
+    }       
+    &__text div p {
+        @include font (bold, 22px, 33px, 0.1px);
+        padding-left: 10px;
+    }
+    &__text-block {
+        padding-top: 90px;
+    }
+}
+
+@media (min-width:1220px) {
+    .feature {
+        &__block {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            
         }
     }
-    .notebook img {
-        padding: 0 20px;
-    }    
 }
 
-.feature {
-    padding: 96px 0 154px 0;
-    margin: 0 auto;
-    text-align: center;
-        & p {
-            @include font (bold, 22px, 33px, 0.1px);
-        }
-        & h3 {
-            @include font (normal, 46px, 57px, 0.2px);
-            margin: 16px 0 28px 0;
-        }
-        & span {
-            @include font (bold, 16px, 20px, 0.2px);
-        }
-            &__block {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 138px;
-            }
-                &__text {
-                    display:flex;
-                    flex-direction: column;
-                    margin-left: 94px;
-                }
-                &__text div {
-                    display: flex;
-                    align-items: center;
-                }
-                &__text p {
-                    @include font (normal, 18px, 27px, 0.2px);
-                    max-width: 255px;
-                    margin-top: 15px;
-                    text-align: left;
-                }   
-                &__text div p {
-                    @include font (bold, 22px, 33px, 0.1px);
-                    margin-left: 10px;
-                }
-                    &__text-block {
-                        padding-top: 95px;
-                    }
-}
+// !feature
+
+// lightning
 
 .lightning {
-    padding:100px 0 ;
+    padding:100px 30px ;
     margin: 0 auto;
     text-align: center;
-        & p {
-            @include font (bold, 22px, 33px, 0.1px);
-        }
-        & h3 {
-            @include font (normal, 46px, 57px, 0.2px);
-            margin: 16px 0 28px 0;
-        }
-        & span {
-            @include font (bold, 16px, 20px, 0.2px);
-            color: $white;
-        }
+    & p {
+        @include font (bold, 22px, 33px, 0.1px);
+    }
+    & h3 {
+        @include font (normal, 46px, 57px, 0.2px);
+        margin: 16px 0 28px 0;
+    }
+    & span {
+        @include font (bold, 16px, 20px, 0.2px);
+        color: $white;
+    }
 }
 .lightning-button {  
     margin-top: 90px;
@@ -176,248 +245,443 @@ img {
         @include button (18px 31px, $white, $dark, 35px);
         @include font (500, 16px, 16px, 0.2px);
         border: 1px solid $white;
-            &:hover {
-                @include button-hover ($primary, $white)
+        &:hover {
+            @include button-hover ($blue, $white)
         }
+    }
 }
+
+// !lightning
+
+// newsletter
+
+.container-newsletter {
+    max-width: 1220px;
+    margin: 0 auto;
 }
 
 .newsletter {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 216px 0 108px 0;
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 30px 100px 30px;
     &__img {
+        display: none;
+        padding: 90px 14px;
+    }
+    &__block {
+        &-one {
+            margin: 0 auto;
+        & p {
+            @include font (bold, 22px, 33px, 0.1px);
+        }
+        & h3{
+            @include font (normal, 46px, 57px, 0.2px);
+            padding: 16px 0 30px 0;
+        }
+        & span {
+            @include font (bold, 16px, 20px, 0.2px);
+        }
+    }
+        &-img {
+            padding: 90px 14px;
+        }
+        &-two {   
+            & p {
+            @include font (bold, 22px, 33px, 0.1px);
+            }
+            & span {
+                @include font (normal, 18px, 27px, 0.2px);
+            }
+        }
+        &-form {
+            text-align: center;
+            margin: 32px 0 0 0;
+            & input {
+                margin-bottom: 12px;
+                @include input (18px 146px 18px 38px, $dark, $white, 39px);
+                @include font (normal, 14px, 16px, 0.1px);
+            }
+            & a {
+                @include button (18px 140px, $blue, $white, 35px);
+                @include font (500, 16px, 16px, 0.2px);
+                &:hover {
+                    @include button-hover ($white, $blue);
+                }
+            }
+        }   
+    }
+  
+}
+
+@media (min-width:992px) {
+    .newsletter {
         display: flex;
-    }
-    &__text h3{
-        @include font (normal, 46px, 57px, 0.2px);
-        padding: 20px 0 40px 0;
-    }
-    &__text {
-        display: flex;
-        flex-direction: column;
-        padding-left: 114px
-    }
-    &__text p {
-       @include font (bold, 22px, 33px, 0.1px);
-    }
-    &__text p:last-child {
-        @include font (normal, 18px, 27px, 0.2px);
+        flex-direction: row;
+        align-items: center;
+        text-align: start;
+        padding: 80px 10px 100px 10px;
+        &__img {
+            display: block;
+            margin-right: 10px;
+        }
+        &__block-img {
+            display: none;
+        }
+        &__block-one {
+            & span {
+                display: none;
+            }
+        }
+        &__block-form {
+            text-align: center;
+            margin: 32px 0 0 0;
+            & input {
+                margin-bottom: 12px;
+                @include input (18px 38px, $dark, $white, 39px);
+                @include font (normal, 14px, 16px, 0.1px);
+            }
+            & a {
+                @include button (18px 38px, $blue, $white, 35px);
+                @include font (500, 16px, 16px, 0.2px);
+                &:hover {
+                    @include button-hover ($white, $blue);
+                }
+            }
+        }
     }
 }
 
-.newsletter-form {
-    margin-top: 40px;
-         & input {
-        margin-right: 12px;
-        @include input (19px 38px, $dark, $white, 39px);
-        @include font (normal, 14px, 16px, 00.1px);
-    }
-        & a {
-            @include button (19px 38px, $primary, $white, 35px);
-            @include font (500, 16px, 16px, 0.2px);
-            &:hover {
-                @include button-hover ($white, $primary);
-            }
+@media (min-width:1300px){
+    .newsletter {
+        padding: 80px 0 100px 0;
+        &__img {
+            margin-right: 112px;
         }
+    }
 }
+
+// !newsletter
+
+// partners
 
 .partners {
     text-align: center;
     padding: 90px 0 80px 0;
-        & h3 {
-             @include font (normal, 46px, 57px, 0.2px);
-             padding-bottom: 28px;
-        }
-        & span {
-            @include font (bold, 16px, 20px, 0.2px);
-            color: $white;
-        }
-        &__button {
-            @include button (16px 58px, $primary, $white, 35px);
-            @include font (500, 22px, 33px, 0.2px);
-        }
-        &__button:hover {
-             @include button-hover ($white, $primary);
-        }
+    & h3 {
+        @include font (normal, 46px, 57px, 0.2px);
+        padding-bottom: 28px;
+    }
+    & span {
+        @include font (bold, 16px, 20px, 0.2px);
+        color: $white;
+    }
+    &__button {
+        @include button (16px 58px, $blue, $white, 35px);
+        @include font (500, 22px, 33px, 0.2px);
+    }
+    &__button:hover {
+        @include button-hover ($white, $blue);
+    }
+    &__link {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        padding: 0 30px;
+        margin:104px 0 96px 0;
+    }
+    &__link li+li {
+        padding-left: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners {
         &__link {
             display: flex;
-            justify-content: center;
-            list-style-type: none;
-            margin:104px 0 96px 0;
+            flex-direction: column;
+            & li+li {
+                padding-left: 0;
+                padding-top: 60px;
+            }
         }
-        &__link li+li {
-            margin-left: 66px;
+        &__hidden {
+            display: none;
         }
+    }
 }
+
+// !partners
+
+// testimonials
 
 .testimonials {
     padding: 110px 0 100px 0;
     text-align: center;
-        & h3 {
-            @include font (normal, 46px, 57px, 0.2px);
-        }
-        & ul {
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-            color: $text;
-            margin: 90px 0 80px 0;
+    & h3 {
+        @include font (normal, 46px, 57px, 0.2px);
+    }
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: $shadow;
         } 
-        &__block div {
-            display: flex;
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 334px;
+        list-style-type: none;
+        background-color: $white;
+        box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+        border-radius: 10px;
+        margin: 70px 21px 0 21px;
+        & img {
+        margin: 40px 0 0 0;
         }
-        &__block div+div {
-            margin-top: 104px;
-        }
-        &__block-text li+li {
-            margin-left: 60px;
-        }
-        & li {
-            list-style-type: none;
-            text-align: center;
-            background-color: $white;
-            box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
-            border-radius: 10px;
-            width: 334px;
-        }
-        & li img {
-            margin-top: 40px;
-        }
-        & li span {
+        & span {
             display:inline-block;
             @include font (normal, 18px, 27px, 0.2px);
-            width: 250px;
+            max-width: 250px;
             margin: 40px 0;
         }
-        & li p {
+        & p {
             @include font (normal, 15px, 27px, 0.2px);
             margin-top: 32px;
         }
-        & li p:last-child {
+        & p:last-child {
             @include font (bold, 12px, 18px, 0.1px);
             margin: 10px 0 50px 0;
         }
-        &__button {
-            @include button (16px 48px, $primary, $white, 35px);
-            @include font (bold, 22px, 33px, 0.1px);
-                &:hover {
-                    @include button-hover ($white, $primary);
-                }
+    }
+    &__hidden {
+        display: none;
+    }
+    &__button {
+        margin-top: 80px; 
+        @include button (16px 48px, $blue, $white, 35px);
+        @include font (bold, 22px, 33px, 0.1px);
+        &:hover {
+            @include button-hover ($white, $blue);
         }
+    }
 }
+
+@media (min-width: 768px) {
+    .testimonials {
+        &__hidden {
+            display: block;
+
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .testimonials {
+        &__list {
+            margin: 90px 30px 0 30px;
+        }
+    }
+}
+
+// !testimonials
+
+// pricing
 
 .pricing {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 110px 0 100px 0;
-       &__block-one {
-            max-width: 340px;
-            margin-right: 284px;
-       }
-       &__block-one h3 {
-            @include font (normal, 46px, 57px, 0.2px);
-            padding-bottom: 26px;
-       }
-       &__block-one p {
-           @include font (normal, 18px, 27px, 0.2px);
-           color: $white;
-       }
-       &__block-two {
-            max-width: 234px;
-       }
-       &__block-two div {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           padding: 16px 0;
-       }
-       &__block-two div p {
-           @include font (900, 55px, 65px, 0.2px);
-           color: $white;
-           text-transform: uppercase;
-       }
-       &__block-two span {
-           @include font (bold, 16px, 20px, 0.2px);
-           color: $white;
-       }
-       &__block-two a {
-           @include button (19px 38px, $primary, $white, 35px);
-           @include font (500, 16px, 16px, 0.2px);
-           margin-top: 18px;
-            &:hover {
-                @include button-hover ($white, $primary);
+    padding: 110px 0 100px 0;
+    &__block-one {
+        display: flex;
+        flex-direction: column;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+    &__block-one h3 {
+        @include font (normal, 46px, 57px, 0.2px);
+        padding-bottom: 26px;
+    }
+    &__block-one p {
+        @include font (normal, 18px, 27px, 0.2px);
+        color: $white;
+        padding: 0 0 112px 0;
+    }
+    &__block-two {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 234px;
+        margin: 0 auto;
+    }
+    &__block-two div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+    &__block-two div p {
+        @include font (900, 55px, 65px, 0.2px);
+        color: $white;
+        text-transform: uppercase;
+        padding-right: 10px;
+    }
+    &__block-two span {
+        @include font (bold, 16px, 20px, 0.2px);
+        color: $white;
+    }
+    &__block-two a {
+        @include button (19px 38px, $blue, $white, 35px);
+        @include font (500, 16px, 16px, 0.2px);
+        margin-top: 18px;
+        &:hover {
+        @include button-hover ($white, $blue);
+        }
+    }
+}
+
+@media (min-width:768px) {
+    .pricing {
+        display: flex;
+        justify-content: center;
+        text-align: start;
+        &__block-one {
+            & p {
+                padding: 0;
             }
-       }
+        }
+    }
+}
+
+// !pricing
+
+// contacts
+
+.contacts-conteiner {
+    max-width: 868px;
+    margin: 0 auto;
 }
 
 .contacts {
     text-align: center;
-    padding: 210px 0 100px 0;
-        & h3 {
-            @include font (normal, 46px, 57px, 0.2px);
-            padding-bottom: 26px;
+    padding: 210px 30px 100px 30px;
+    & h3 {
+        @include font (normal, 46px, 57px, 0.2px);
+        padding-bottom: 26px;
+    }
+    & span {
+        @include font (bold, 16px, 20px, 0.2px);
+        color: $white;
+    }
+    &__social {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        padding: 74px 0;
+    }
+    &__social li+li {
+        padding-left: 32px;
+    }
+    &__connection {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        @include font (bold, 12px, 18px, 0.1px);    
+        color: $white;
+        padding: 60px 0;
+    }
+    &__connection li+li {
+        padding-top: 22px;
+    }
+    &__connection li {
+        width: 210px;
+        margin: 0 auto;
+    }
+    &__list {
+        background-color: $white;
+        max-width: 868px;
+        padding: 52px 50px 52px 50px;
+        box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+        border-radius: 20px;
+        & p {
+            @include font (bold, 22px, 33px, 0.1px);
+            color: $dark;
+            padding-bottom: 44px;
         }
-        & span {
-            @include font (bold, 16px, 20px, 0.2px);
-            color: $white;
+        & a {
+            @include button (16px 54px, $white, $blue, 35px);
+            &:hover {
+                @include button-hover ($blue, $white);
+            }
         }
-        &__social {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            padding: 74px 0;
-        }
-        &__social li+li {
-            padding-left: 32px;
-        }
-        &__connection {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 18px;        
-            letter-spacing: 0.1px;
-            color: $white;
-            padding: 60px 0;
-        }
-        &__connection li+li {
-            padding-left: 34px;
-        }
-        &__connection li {
-            max-width: 210px;
-        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+    &__form input {
+        @include input (18px 20px, $dark, $Whitesmoke, 39px);
+        max-width: 768px;
+    }
+    &__form input+input {
+        margin-top: 44px;
+    }
+    &__form textarea {
+        max-width: 768px;
+        height: 194px;
+        @include input (22px 20px, $dark, $Whitesmoke, 0);
+        margin: 44px 0;
+    }
 }
+
+@media (min-width: 500px) {
+    .contacts__connection {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        & li {
+            margin: 0;
+        }
+        & li+li {
+            padding-top: 0;
+            padding-left: 34px;
+    }
+}
+}
+
+// !contacts
+
+// footer
 
 .main-footer {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 112px 0 130px 0;
-    & p {
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 30px 100px 30px;
+    &__block {
+        text-align: center;
+        width: 100%; 
+        & p {
         @include font (bold, 22px, 33px, 0.1px);
-        padding-bottom: 24px;
+        padding:84px 0 24px 0;
+        }
     }
     & li {
-        display: flex;
         list-style-type: none;
     }
-    &__block-link a{
+    &__block-link a {
         text-decoration: none;
         @include font (normal, 15px, 27px, 0.2px);
         color: $white;
     }
-            &__block-link li+li {
-            padding-top: 16px;
-        }
+    &__block-link li+li {
+        padding-top: 16px;
+    }
     &__social {
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding-top: 84px; 
     }
     &__social-link a+a {
         margin-left: 32px;
@@ -430,20 +694,55 @@ img {
         @include font (normal, 18px, 27px, 0.2px);
     }
     &__form {
-        display: flex;
-        flex-direction: column;
             & input {
                 margin-top: 28px;
-                @include input (19px 35px, $dark, $white, 39px)
+                width: 354px;
+                @include input (18px 35px, $dark, $white, 39px)
             }
     }
-    &__form a {
+    &__form div a {
         margin-top: 12px;
         text-decoration: none;
-        @include button (16px 144px, $primary, $white, 35px);
+        @include button (16px 144px, $blue, $white, 35px);
         @include font (500, 16px, 16px, 0.2px);
     &:hover {
-        @include button-hover ($white, $primary)
+        @include button-hover ($white, $blue);
     }
     }
 }
+
+@media (min-width:768px) {
+    .main-footer {
+        &__block {
+            width: 50%;
+        }
+        &__social {
+            width: 50%;
+        }
+    }
+}
+
+@media (min-width:1200px) {
+    .main-footer {
+        width: 1026px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 200px 0 130px 0;
+        margin: 0 auto;
+        &__block {
+            text-align: start;
+            width: 100%;
+            & p {
+                padding:0 0 24px 0;
+            }
+        }
+        &__social {
+            text-align: start;
+            width: 100%;
+            padding-top: 0; 
+        }
+    }
+}
+
+// !footer

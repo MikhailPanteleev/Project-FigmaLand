@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="bg">
-        <header class="main-header">
+        <header class="container">
             <nav class="main-nav">
                 <div>
                     <img src="/img/icon-logo.svg" alt="">
@@ -29,6 +29,12 @@
                     <input type="text" placeholder="Your e-mail">
                     <a href="">Subsribe</a>
                 </form>
+                <div class="header-mobil">
+                    <a class="header-mobil__login" href="#">Login</a>
+                    <a class="header-mobil__dropdown" href="#">
+                        <img src="img/dropdown.png" alt="Иконка меню">
+                    </a>
+                </div>
             </nav>
         </header>
         <main>
@@ -37,7 +43,9 @@
                 <h2>Lightning fast prototyping</h2>
                 <p>Most calendars are designed for teams. Slate is designed for freelancers</p>
                 <a href="">Try For Free</a>
-                <img src="img/notebook.svg" alt="">
+                <div>
+                    <img src="img/notebook.svg" alt="">
+                </div>
             </section>
     </div>
     <section class="feature">
@@ -45,7 +53,9 @@
         <h3>Features</h3>
         <span>Most calendars are designed for teams. <br> Slate is designed for freelancers</span>
         <div class="feature__block">
-            <img src="img/screen.png" alt="">
+            <div class="feature__screen">
+                <img  src="img/screen.png" alt="">
+            </div>
             <div class="feature__text">
                 <div>
                     <img src="img/feature-icon.svg" alt="Иконка ресторана">
@@ -56,7 +66,7 @@
                     <img src="img/feature-icon.svg" alt="Иконка ресторана">
                     <p>At your fingertips</p>
                 </div>
-                <p>Slate helps you see how many more days you need to work to reach your financial goal.</p>
+                    <p>Slate helps you see how many more days you need to work to reach your financial goal.</p>
             </div>
         </div>
     </section>
@@ -69,19 +79,30 @@
             <a href="#">Try for free</a>
         </div>
     </section>
-    <section class="newsletter">
-        <div class="newsletter__img"><img src="img/newsletter.svg" alt="Фото новостей"></div>
-        <div class="newsletter__text">
-        <p>At your fingertips</p>
-        <h3>Newsletter</h3>
-        <p>Subscribe to our Newsletter</p>
-        <p>Available exclusivery on Figmaland</p>
-        <form class="newsletter-form" action="">
-            <input type="text" placeholder="Your e-mail">
-            <a href="">Subsribe</a>
-        </form>
+    <section class="newsletter container-newsletter">
+        <div class="newsletter__img">
+            <img src="img/newsletter.svg" alt="Фото новостей">
+        </div>
+        <div class="newslatter__block">
+            <div class="newsletter__block-one">
+                <p>At your fingertips</p>
+                <h3>Newsletter</h3>
+                <span>Most calendars are designed for teams. <br> Slate is designed for freelancers</span>
+            </div>
+            <div class="newsletter__block-img">
+                <img src="img/newsletter.svg" alt="Фото новостей">
+            </div>
+            <div class="newsletter__block-two">
+                <p>Subscribe to our Newsletter</p>
+                <span>Available exclusivery on Figmaland</span>
+                <form class="newsletter__block-form" action="">
+                    <input type="text" placeholder="Your e-mail">
+                    <a href="">Subsribe</a>
+                </form>
+            </div>
         </div>
     </section>
+
     <section class="partners">
         <h3>Partners</h3>
         <span>Most calendars are designed for teams. <br> Slate is designed for freelancers</span>
@@ -111,12 +132,12 @@
                     <img src="img/logo-airbnb.svg" alt="Логотип airbnb">
                 </a>
             </li>
-            <li>
+            <li class="partners__hidden">
                 <a href="">
                     <img src="img/logo-frame.svg" alt="Логотип frame">
                 </a>
             </li>
-            <li>
+            <li class="partners__hidden">
                 <a href="">
                     <img src="img/logo-ibm.svg" alt="Логотип ibm">
                 </a>
@@ -127,56 +148,54 @@
     <section class="testimonials container">
         <h3>Testimonials</h3>
         <ul class="testimonials__block">
-            <div class="testimonials__block-text">
-                <li>
+                <li class="testimonials__list">
                     <img src="img/photo-one.png" alt="">
                     <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
                     <img src="img/stars.png" alt="Фото рейтинга">
                     <p>Regina Miles</p>
                     <p>Designer</p> 
                 </li>
-                <li>
+                <li class="testimonials__list">
                     <img src="img/photo-two.png" alt="">
                     <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
                     <img src="img/stars.png" alt="Фото рейтинга">
                     <p>Regina Miles</p>
                     <p>Designer</p>
                 </li>
-                <li>
+                <li class="testimonials__list">
                     <img src="img/photo-three.png" alt="">
                     <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
                     <img src="img/stars.png" alt="Фото рейтинга">
                     <p>Regina Miles</p>
                     <p>Designer</p>
                 </li>
-            </div>
-            <div class="testimonials__block-text">
-                <li>
+
+                <li class="testimonials__list testimonials__hidden">
                     <img src="img/photo-four.png" alt="">
                     <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
                     <img src="img/stars.png" alt="Фото рейтинга">
                     <p>Regina Miles</p>
                     <p>Designer</p>
                 </li>
-                <li>
+                <li class="testimonials__list testimonials__hidden">
                     <img src="img/photo-five.png" alt="">
                     <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
                     <img src="img/stars.png" alt="Фото рейтинга">
                     <p>Regina Miles</p>
                     <p>Designer</p>
                 </li>
-                <li>
+                <li class="testimonials__list testimonials__hidden">
                     <img src="img/photo-six.png" alt="">
                     <span>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</span>
                     <img src="img/stars.png" alt="Фото рейтинга">
                     <p>Regina Miles</p>
                     <p>Designer</p>
                 </li>
-            </div>
+
         </ul>
         <a class="testimonials__button" href="">More Testimonials</a>
     </section>
-    <section class="pricing">
+    <section class="pricing container">
         <div class="pricing__block-one">
             <h3>Pricing</h3>
             <p>Slate helps you see how many more days you need to work to reach your financial goal for the month and year.</p>
@@ -214,7 +233,7 @@
             </li>
         </ul>
         <img src="img/map.png" alt="">
-        <ul class="contacts__connection">
+        <ul class="contacts__connection contacts-conteiner">
             <li>
                 <a href="">
                     <img src="img/icon-map.svg" alt="Иконка карты">
@@ -234,9 +253,18 @@
                 <p>willie.jennings@example.com</p>
             </li>
         </ul>
+        <div class="contacts__list contacts-conteiner"> 
+            <p>Contact Us</p>
+            <form class="contacts__form" action="">
+                <input type="text" name="" id="" placeholder="Your name">
+                <input type="text" placeholder="Your e-mail">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            </form>
+            <a href="">Send</a>
+        </div>
     </section> 
     </main>
-    <footer class="main-footer container">
+    <footer class="main-footer">
         <div class="main-footer__block">
             <p>Pages</p>
             <ul class="main-footer__block-link">
@@ -267,26 +295,27 @@
                 <li><a href="">Bruce Simmmons</a></li>
             </ul>
         </div>
-        <div>
             <ul class="main-footer__social">
                 <li class="main-footer__social-link">
                     <a href="">
                         <img src="img/icon-twitter.svg" alt="Иконка twitter">
                     </a>
                     <a href="">
-                        <img src="img/icon-telephone.svg" alt="Иконка телефона">
+                        <img src="img/icon-facebook.svg" alt="Иконка телефона">
                     </a>
                     <a href="">
-                        <img src="img/icon-e-mail.svg" alt="Иконка почты">
+                        <img src="img/icon-linkedin.svg" alt="Иконка почты">
                     </a>
                 </li>
                 <p>Subscribe to our Newsletter</p>
                 <span>Available exclusivery on Figmaland</span>
                     <form class="main-footer__form" action="">
                         <input type="text" placeholder="Your e-mail">
-                        <a href="">Subsribe</a>
+                        <div>
+                            <a href="">Subsribe</a>
+                        </div>
                     </form>
             </ul>
-        </div>
+
     </footer>
 </body>
